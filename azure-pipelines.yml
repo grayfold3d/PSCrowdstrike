@@ -1,10 +1,29 @@
+trigger:
+  branches:
+    include:
+      - master
+    exclude:
+      - develop
+
+pr:
+  branches:
+    include:
+     - master
+
 jobs:
   - job: build_pwsh_win2016
     pool:
       vmImage: vs2017-win2016
+
     steps:
-    - pwsh: ./build.ps1 -Task Test -Bootstrap -Verbose
-      displayName: 'Build and Test'
+
+    - task: PowerShell@2
+      displayName: 'Run through Tests'
+      inputs:
+        targetType: Inline
+        script: ./build.ps1 -Task Test -Verbose -Bootstrap
+        condition: succeeded()
+
     - task: PublishTestResults@2
       inputs:
         testRunner: 'NUnit'
@@ -12,3 +31,11 @@ jobs:
         testRunTitle: 'pwsh_win2016'
       displayName: 'Publish Test Results'
 
+    - task: PowerShell@2
+      displayName: 'Publish To PSGallery'
+      inputs:
+        targetType: Inline
+        script: ./build.ps1 -Task PublishToPSGallery
+        condition: succeeded()
+      env:
+        API: $(API)
