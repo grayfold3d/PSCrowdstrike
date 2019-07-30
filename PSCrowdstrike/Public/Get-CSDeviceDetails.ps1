@@ -25,18 +25,16 @@ function Get-CSDeviceDetails {
     )
 
     begin {
-        $DeviceEndpoint = "/devices/queries/devices/v1?filter=hostname%3A'{0}'" -f $HostName
+        $DeviceEndpoint = "/devices/queries/devices/v1?filter=hostname%3A$hostname"
     }
 
     process {
-        $AgentID = Invoke-CSRestMethod -Endpoint $DeviceEndpoint -Method "GET" | Select-Object -ExpandProperty Resources
+        $AgentID = (Invoke-CSRestMethod -Endpoint $DeviceEndpoint -Method "GET").Resources
 
-        $EntityEndpoint = "/devices/entities/devices/v1?ids=$AgentID"
-
-        $Output = Invoke-CSRestMethod -Endpoint $EntityEndpoint -Method "GET" | Select-Object -ExpandProperty Resources
+        (Invoke-CSRestMethod -Endpoint ("/devices/entities/devices/v1?ids=$AgentID") -Method "GET").Resources
     }
 
     end {
-        $Output
+
     }
 }
