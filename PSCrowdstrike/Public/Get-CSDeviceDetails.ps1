@@ -25,7 +25,7 @@ function Get-CSDeviceDetails {
     )
 
     begin {
-        $DeviceEndpoint = "/devices/queries/devices/v1?filter=hostname%3A$hostname"
+        $DeviceEndpoint = "/devices/queries/devices/v1?filter=hostname%3A%27$hostname%27"
     }
 
     process {

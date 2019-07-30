@@ -33,6 +33,6 @@ function Get-CSDomainMachines {
     }
 
     end {
-        $Output
+
     }
 }
