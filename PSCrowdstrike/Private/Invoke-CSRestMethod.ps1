@@ -36,14 +36,12 @@ function Invoke-CSRestMethod {
 
     Begin {
 
-        $token = Get-PSFConfigValue -FullName PSCrowdstrike.Token
-
         $RestMethodParams = @{
             URI         = "https://api.crowdstrike.com" + $Endpoint
             Method      = $Method
             Headers     = @{
                 "Accept"       = "application/json"
-                "Authorization" = "bearer $token"
+                "Authorization" = "bearer $(Get-PSFConfigValue -FullName PSCrowdstrike.Token)"
             }
         }
 
