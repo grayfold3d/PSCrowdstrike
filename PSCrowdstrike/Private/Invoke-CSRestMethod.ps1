@@ -43,7 +43,7 @@ function Invoke-CSRestMethod {
             Method      = $Method
             Headers     = @{
                 "Accept"       = "application/json"
-                "Authorization" = "bearer '{0}'" -f $token
+                "Authorization" = "bearer $token"
             }
         }
 
