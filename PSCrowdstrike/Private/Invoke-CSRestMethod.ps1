@@ -41,7 +41,6 @@ function Invoke-CSRestMethod {
             Method      = $Method
             Headers     = @{
                 "Accept"       = "application/json"
-                "Content-Type" = "application/x-www-form-urlencoded"
                 "Authorization" = "bearer '{0}'" -f $(Get-PSFConfigValue -FullName PSCrowdstrike.Token)
             }
         }
