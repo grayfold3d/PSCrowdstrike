@@ -20,5 +20,5 @@ Install-Module -Name PSCrowdstrike -Scope CurrentUser -Repository PSGallery
 Get-CSToken -ClientID "12345" -ClientSecret "54321"
 
 ## Retrieves host information (OS, OU, Domain, etc) for DC1 from Crowdstrike API.
-Get-CSDeviceDetails -Computername "DC1"
+Get-CSDeviceDetails -Hostname "DC1"
 ```
