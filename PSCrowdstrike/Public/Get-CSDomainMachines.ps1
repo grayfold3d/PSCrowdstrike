@@ -25,7 +25,7 @@ function Get-CSDomainMachines {
     )
 
     begin {
-        $DeviceEndpoint = "/devices/queries/devices/v1?filter=machine_domain%3A%27$domain%27"
+        $DeviceEndpoint = "/devices/queries/devices-scroll/v1?limit=5000&filter=machine_domain%3A%27$domain%27"
     }
 
     process {
