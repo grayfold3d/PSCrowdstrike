@@ -56,4 +56,3 @@ The generated about topic will be encoded UTF-8.
 - {{ Keyword Placeholder }}
 - {{ Keyword Placeholder }}
 - {{ Keyword Placeholder }}
-

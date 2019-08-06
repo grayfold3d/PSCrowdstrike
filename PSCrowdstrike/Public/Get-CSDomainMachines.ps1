@@ -1,17 +1,17 @@
 function Get-CSDomainMachines {
     <#
     .SYNOPSIS
-        Function to retrieve host info from Crowdstrike via /devices/queries/devices/v1 and
-        /devices/entities/devices/v1 endpoint.
+        Function to retrieve AgentID's for an Active Directory domain from Crowdstrike
+        via /devices/queries/devices-scroll/v1.
     .DESCRIPTION
-        This function provides a way to retrieve using common parameters required by PSCrowdstrike.
+        This function provides a way to retrieve Agent IDs from Crowdstrike.
     .EXAMPLE
         PS C:\> Get-CSDomainMachines -Domain "domain.local"
-        Retrieves all AgentID's in Crowdstrike for Servers in domain.local
+        Retrieves all AgentID's in Crowdstrike for domain.local
     .INPUTS
         None
     .PARAMETER Domain
-        The hostname you would like to query.
+        The Active Directory Domain you would like to query.
     .OUTPUTS
         None
     .NOTES
