@@ -4,7 +4,7 @@ function Get-CSDeviceDetails {
         Function to retrieve host info from Crowdstrike via /devices/queries/devices/v1 and
         /devices/entities/devices/v1 endpoint.
     .DESCRIPTION
-        This function provides a way to retrieve using common parameters required by PSCrowdstrike.
+        This function provides a way to retrieve host information from Crowdstrike.
     .EXAMPLE
         PS C:\> Get-CSDeviceDetails -Computername "DC1"
         Retrieves host information (OS, OU, Domain, etc) for DC1 from Crowdstrike API.
@@ -15,7 +15,7 @@ function Get-CSDeviceDetails {
     .OUTPUTS
         None
     .NOTES
-        None
+        Use this function to retrieve host information from Crowdstrike.
     #>
     [CmdletBinding()]
     param (
