@@ -31,7 +31,7 @@ function Get-CSDeviceDetails {
     process {
         $AgentID = (Invoke-CSRestMethod -Endpoint $DeviceEndpoint -Method "GET").Resources
 
-        (Invoke-CSRestMethod -Endpoint ("/devices/entities/devices/v1?ids=$AgentID") -Method "GET").Resources
+        Get-CSAgentIDDetail -AgentID $AgentID
     }
 
     end {

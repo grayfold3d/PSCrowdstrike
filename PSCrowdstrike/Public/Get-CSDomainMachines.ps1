@@ -21,11 +21,19 @@ function Get-CSDomainMachines {
     param (
         [Parameter(Mandatory = $true)]
         [string]
-        $Domain
+        $Domain,
+
+        [Parameter(Mandatory = $true)]
+        [ValidateSet(
+            "Server",
+            "Workstation"
+            )]
+        [string]
+        $Type
     )
 
     begin {
-        $DeviceEndpoint = "/devices/queries/devices-scroll/v1?limit=5000&filter=machine_domain%3A%27$domain%27"
+        $DeviceEndpoint = "/devices/queries/devices-scroll/v1?limit=5000&filter=machine_domain%3A%27$domain%27%2Cproduct_type_desc%3A%$type%27"
     }
 
     process {
