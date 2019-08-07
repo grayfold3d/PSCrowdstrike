@@ -12,6 +12,8 @@ function Get-CSDomainMachines {
         None
     .PARAMETER Domain
         The Active Directory Domain you would like to query.
+    .PARAMETER Type
+        The computer type you would like to query, Server or Workstation.
     .OUTPUTS
         None
     .NOTES
