@@ -11,7 +11,7 @@ A PowerShell wrapper around Crowdstrike API.
 This is a PowerShell Module that functions as an API wrapper around Crowdstrike's API, which
 is based on OAuth2.
 
-Please open a [Pull Request](https://github.com/jwmoss/PSCrowdstrike/blob/master/.github/PULL_REQUEST_TEMPLATE.md) if you desire any new features or create an [Issue](https://github.com/jwmoss/PSCrowdstrike/blob/master/.github/ISSUE_TEMPLATE.md)if you come across a bug.
+Please open a [Pull Request](https://github.com/jwmoss/PSCrowdstrike/blob/master/.github/PULL_REQUEST_TEMPLATE.md) if you desire any new features or create an [Issue](https://github.com/jwmoss/PSCrowdstrike/blob/master/.github/ISSUE_TEMPLATE.md) if you come across a bug.
 
 ## Installation
 
