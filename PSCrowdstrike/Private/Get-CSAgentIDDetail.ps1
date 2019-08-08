@@ -19,7 +19,6 @@ function Get-CSAgentIDDetail {
     [CmdletBinding()]
     param (
         [Parameter(Mandatory = $true)]
-        [string]
         $AgentID
     )
 
